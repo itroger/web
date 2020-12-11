@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/itroger/web#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "antd": "^4.9.2",
     "next": "^10.0.3",
