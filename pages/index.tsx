@@ -4,9 +4,9 @@ import styles from './index.less'
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.home}>
-      <h1>Hello Next.js</h1>
-      <Button>按钮</Button>
+    <div>
+      <h1 className={styles.home}>Hello Next.js</h1>
+      <Button type='primary'>按钮</Button>
     </div>
   )
 }
