@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "Next 项目",
   "main": "index.tsx",
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/itroger/web.git"
   },
-  "author": "",
+  "author": "itroger",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/itroger/web/issues"
