@@ -9,13 +9,13 @@ const Layout:React.FC<LayoutProps> = props => {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel='icon' href={'/icons/heart.png'} />
+        <link rel='icon' href='/icons/heart.png' />
         <title>挥墨书未来</title>
         <meta content='itroger 挥墨书未来' />
         <meta name='viewpoint' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Header />
-      <main>{ children }</main>
+      <main className={styles.main}>{ children }</main>
     </div>
   )
 }
