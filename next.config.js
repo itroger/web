@@ -1,52 +1,58 @@
-const withLess = require('@zeit/next-less')
+const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 const lessToJS = require('less-vars-to-js')
 
 const fs = require('fs')
 const path = require('path')
-
-const dotenv = require('dotenv')
-
-dotenv.config()
-
 const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8'))
 
-module.exports = withLess({
-// cssModules: true,
-    cssLoaderOptions: {
-        importLoaders: 1,
-        localIdentName: '[local]__[hash:base64:5]',
-    },
-    lessLoaderOptions: {
-        lessOptions: {
-            javascriptEnabled: true,
-            modifyVars: themeVariables, // make your antd custom effective
-        }
-    },
-    webpack: (config, options) => {
+module.exports = (nextConfig = {}) => {
+    return Object.assign({}, nextConfig, {
+        webpack: (config, options) => {
+            const {dev, isServer} = options
+            const { lessLoaderOptions = {} } = nextConfig
 
-        const { isServer } = options
-
-        if (isServer) {
-            const antStyles = /antd\/.*?\/style.*?/
-            const origExternals = [...config.externals]
-            config.externals = [
-                (context, request, callback) => {
-                    if (request.match(antStyles)) return callback()
-                    if (typeof origExternals[0] === 'function') {
-                        origExternals[0](context, request, callback)
-                    } else {
-                        callback()
-                    }},
-                ...(typeof origExternals[0] === 'function' ? [] : origExternals),
-            ]
-
-            config.module.rules.unshift({
-                test: antStyles,
-                use: 'null-loader',
+            config.module.rules.push({
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: cssLoaderConfig(config, {
+                    extensions: ['less'],
+                    cssModules: true,
+                    cssLoaderOptions: {
+                        importLoader: 1,
+                        localIdentName: '[local]__[hash:base64:5]'
+                    },
+                    dev,
+                    isServer,
+                    loaders: [{
+                        loader: 'less-loader',
+                        options: lessLoaderOptions
+                    }]
+                })
             })
-        }
 
-        config.resolve.alias['@'] = path.resolve(__dirname);
-        return config;
-    }
-})
+            config.module.rules.push({
+                test: /\.less$/,
+                include: /node_modules/,
+                use: cssLoaderConfig(config, {
+                    extensions: ['less'],
+                    cssModules: false,
+                    cssLoaderOptions: {},
+                    dev,
+                    isServer,
+                    loaders: [{
+                        loader: 'less-loader',
+                        options: {
+                            ...lessLoaderOptions,
+                            lessOptions: {
+                                javascriptEnabled: true,
+                                modifyVars: themeVariables
+                            }
+                        }
+                    }]
+                })
+            })
+
+            return config
+        }
+    })
+}
