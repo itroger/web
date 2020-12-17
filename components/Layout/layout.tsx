@@ -1,5 +1,6 @@
 import React from 'react'
-import Head from 'next/head';
+import Head from 'next/head'
+import Header from '../Header'
 import { LayoutProps } from './layout.d'
 import styles from './layout.less'
 
@@ -13,6 +14,7 @@ const Layout:React.FC<LayoutProps> = props => {
         <meta content='itroger 挥墨书未来' />
         <meta name='viewpoint' content='initial-scale=1.0, width=device-width' />
       </Head>
+      <Header />
       <main>{ children }</main>
     </div>
   )
