@@ -31,8 +31,8 @@
             "nextjs": {
                 "use": "@cloudbase/framework-plugin-website",
                 "inputs": {
-                    "buildCommand": "npm run build",
-                    "outputPath": "build"
+                    "buildCommand": "next build && next export",
+                    "outputPath": "out"
                 }
             }
         }
