@@ -3,7 +3,8 @@
   padding: 0 5vw;
   border-bottom: 1px solid #eee;
   background-image: url('/images/background.jpg');
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 
   nav {
     left: 0;
@@ -11,7 +12,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 520px;
     height: 64px;
 
     .content {
@@ -91,10 +91,35 @@
 
 @media screen and (max-width: 666px) {
   .header {
-    background-size: auto 100%;
+    height: 250px;
+    //background-size: auto 100%;
 
-    .logo > div {
-      display: none;
+    nav {
+      height: 40px;
+
+      .content {
+        .logo {
+          height: 40px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+
+          div {
+            display: none;
+          }
+        }
+
+        .menu {
+          li {
+            padding: 0 5px;
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
     }
   }
 }
