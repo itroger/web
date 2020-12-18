@@ -11,6 +11,7 @@ module.exports = (nextConfig = {}) => {
             const {dev, isServer} = options
             const { lessLoaderOptions = {} } = nextConfig
 
+            // 本地 less 设置
             config.module.rules.push({
                 test: /\.less$/,
                 exclude: /node_modules/,
@@ -30,6 +31,7 @@ module.exports = (nextConfig = {}) => {
                 })
             })
 
+            // antd less 设置
             config.module.rules.push({
                 test: /\.less$/,
                 include: /node_modules/,
@@ -50,6 +52,12 @@ module.exports = (nextConfig = {}) => {
                         }
                     }]
                 })
+            })
+
+            // node-vibrant 设置
+            config.module.rules.push({
+                test: /\.worker.js$/,
+                loader: 'worker-loader'
             })
 
             return config

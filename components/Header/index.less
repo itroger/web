@@ -3,82 +3,98 @@
   padding: 0 5vw;
   border-bottom: 1px solid #eee;
   background-image: url('/images/background.jpg');
+  background-size: 100%;
 
   nav {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    max-width: 1080px;
-    width: 1080px;
+    width: 100%;
+    min-width: 520px;
     height: 64px;
-    margin: 0 auto;
 
-    .logo {
+    .content {
       display: flex;
-      align-content: center;
-      width: 200px;
-      height: 50px;
+      align-items: center;
+      width: 1080px;
 
-      img {
-        width: 50px;
+      .logo {
+        display: flex;
+        align-content: center;
         height: 50px;
 
-        &:hover {
-          cursor: pointer;
-        }
-      }
-
-      div {
-        margin-left: 10px;
-        line-height: 50px;
-        font-size: 20px;
-      }
-    }
-
-    .menu {
-      display: flex;
-      height: 100%;
-      margin: 0;
-
-      li {
-        display: flex;
-        align-items: center;
-        padding: 0 15px;
-        list-style: none;
-
-        a {
-          font-size: 18px;
-          font-weight: 600;
-          color: #fff;
-          opacity: .8;
-
-          &::after {
-            content: "";
-            display: block;
-            width: 0;
-            height: 1px;
-            background-color: #fff;
-          }
+        img {
+          width: 50px;
+          height: 50px;
 
           &:hover {
-            opacity: 1;
-          }
-
-          &:hover::after {
-            width: 100%;
-            transition: all .35s ease-in-out;
+            cursor: pointer;
           }
         }
 
-        &.isActive {
+        div {
+          margin: 0 10px;
+          line-height: 50px;
+          font-size: 20px;
+          user-select: none;
+        }
+      }
+
+      .menu {
+        display: flex;
+        height: 100%;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          padding: 0 15px;
+          list-style: none;
 
           a {
-            opacity: 1;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            opacity: .8;
+            user-select: none;
+
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 1px;
+              background-color: #fff;
+            }
+
+            &:hover {
+              opacity: 1;
+            }
+
+            &:hover::after {
+              width: 100%;
+              transition: all .35s ease-in-out;
+            }
+          }
+
+          &.isActive {
+
+            a {
+              opacity: 1;
+            }
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .header {
+    background-size: auto 100%;
+
+    .logo > div {
+      display: none;
     }
   }
 }
