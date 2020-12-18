@@ -1,0 +1,42 @@
+{
+    "envId": "web-6g9c5evk88898326",
+    "version": "2.0",
+    "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+    "name": "web",
+    "repo": {
+        "Url": "https://e.coding.net/itroger/web",
+        "Name": "",
+        "Type": "",
+        "RawCode": "",
+        "WorkDir": "dist"
+    },
+    "tags": [],
+    "addons": [],
+    "network": {},
+    "plugins": {
+        "client": {
+            "use": "@cloudbase/framework-plugin-website",
+            "inputs": {
+                "cloudPath": "/",
+                "outputPath": "dist",
+                "buildCommand": "npm run build",
+                "installCommand": "npm install"
+            }
+        }
+    },
+    "environment": {},
+    "framework": {
+        "name": "web",
+        "plugins": {
+            "nextjs": {
+                "use": "@cloudbase/framework-plugin-website",
+                "inputs": {
+                    "buildCommand": "npm run build",
+                    "outputPath": "build"
+                }
+            }
+        }
+    },
+    "functionRoot": "./functions",
+    "functions": []
+}

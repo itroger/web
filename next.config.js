@@ -7,6 +7,8 @@ const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, './asset
 
 module.exports = (nextConfig = {}) => {
     return Object.assign({}, nextConfig, {
+        distDir: 'build',
+
         webpack: (config, options) => {
             const {dev, isServer} = options
             const { lessLoaderOptions = {} } = nextConfig
