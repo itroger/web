@@ -30,10 +30,10 @@ const Header: React.FC = () => {
   useEffect(() => {
     let io = new IntersectionObserver(entries => {
       if (entries[0].intersectionRatio > 0) {
-        console.log('进入可视区域')
+        // 进入可视区域
         setNavBackgroundVisible(false)
       } else {
-        console.log('离开可视区域')
+        // 离开可视区域
         setNavBackgroundVisible(true)
       }
     })
