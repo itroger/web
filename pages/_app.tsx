@@ -4,9 +4,9 @@ import './_app.less'
 import 'antd/dist/antd.less'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const { home } = pageProps
+  const { page } = pageProps
   return (
-    <Layout home={home}>
+    <Layout page={page}>
       <Component {...pageProps} />
     </Layout>
   )
