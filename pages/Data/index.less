@@ -1,12 +1,16 @@
+@import "/assets/antd-custom.less";
+
 .data {
-  display: flex;
-  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, calc((100% - 10px) / 4));
+  grid-auto-rows: 200px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding: 10px;
 }
 
 .card {
-  width: 250px;
-  height: 200px;
-  margin: 10px;
+  height: 100%;
   border-radius: 4px;
   overflow: hidden;
 
@@ -16,7 +20,7 @@
   }
 
   .background {
-    height: 150px;
+    height: 75%;
     background-size: cover;
     background-position: center;
   }
@@ -25,9 +29,78 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 25%;
+    line-height: 25%;
     font-size: 20px;
-    background-color: #f7f7f7;
+    background-color: #fff;
     user-select: none;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  background-color: inherit;
+
+  &:hover {
+    background-color: @primary-1;
+  }
+
+  > div {
+    text-align: left;
+
+    &:nth-child(1) {
+      flex: 0 0 100px;
+    }
+
+    &:nth-child(2) {
+      flex: 1;
+    }
+
+    &:nth-child(3) {
+      flex: 0 0 200px;
+
+      .category {
+        background-color: @primary-1;
+      }
+    }
+
+    &:nth-child(4) {
+      flex: 0 0 100px;
+    }
+  }
+}
+
+.codeMenu {
+  .title {
+    background-color: #f7f8fb;
+
+    &:hover {
+      cursor: default;
+      background-color: #f7f8fb;
+    }
+  }
+
+  .linkA {
+    &:nth-child(odd) {
+      background-color: #f7f8f9;
+    }
+
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .data {
+    grid-template-columns: repeat(2, calc((100% - 10px) / 2));
+    grid-auto-rows: 150px;
+  }
+
+  .card > .context {
+    font-size: 18px;
   }
 }

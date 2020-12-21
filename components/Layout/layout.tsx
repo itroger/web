@@ -1,22 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from '../Header'
-import { LayoutProps } from './layout.d'
+import { LayoutProps } from 'components/layout'
 import styles from './layout.less'
 
 const Layout:React.FC<LayoutProps> = props => {
-  const { children, page } = props
-
-  const renderPage = () => {
-    switch (page) {
-      case 'mdx':
-        return null
-      default:
-        return null
-    }
-  }
-
-
+  const { children } = props
   return (
     <div className={styles.container}>
       <Head>
@@ -26,7 +15,7 @@ const Layout:React.FC<LayoutProps> = props => {
         <meta name='viewpoint' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Header />
-      <main className={styles.main}>{renderPage()}{ children }</main>
+      <main className={styles.main}>{ children }</main>
     </div>
   )
 }

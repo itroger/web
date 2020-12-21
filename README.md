@@ -54,12 +54,18 @@ tsconfig.json     // TypeScript 配置文件
 
 ---
 
-### 3. Web
+### 3. JavaScript
 - IntersectionObserver : 可视区域
 
 ---
 
-### 4. 配置
+### 4. CSS
+- flex: 一维布局
+- grid: 二维布局
+
+---
+
+### 5. 配置
 - next.config.js: next && webpack 配置
 - .babelrc: babel 配置
 - tsconfig.json: typescript 配置

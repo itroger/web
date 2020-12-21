@@ -1,20 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './Card'
+import Card from './components/Card'
 import styles from './index.less'
-import { GetStaticProps } from 'next'
+import { CardListType } from 'pages/data'
 
-export const getStaticProps: GetStaticProps = async () => ({
-  props: {
-    page: 'mdx'
-  }
-})
-
-interface CardListType {
-  name: string,
-  background: string,
-  link: string
-}
 
 const Data: React.FC = () => {
   const cardList: CardListType[] = [
@@ -26,13 +15,18 @@ const Data: React.FC = () => {
     {
       name: '编程题库',
       background: '/images/background.jpg',
-      link: '/Algorithms/JZ1'
+      link: '/Data/CodeMenu'
+    },
+    {
+      name: '数据科学',
+      background: '/images/background.jpg',
+      link: '/Data/CodeMenu'
     }
   ]
 
   return <div className={styles.data}>
-    {cardList.map(item => <Link href={item.link}>
-      <a><Card name={item.name} background={item.background}/></a>
+    {cardList.map(item => <Link href={item.link} key={item.name}>
+      <a><Card name={item.name} background={item.background} /></a>
     </Link>)}
   </div>
 }

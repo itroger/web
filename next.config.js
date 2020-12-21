@@ -34,7 +34,13 @@ module.exports = withPlugins([
             isServer,
             loaders: [{
               loader: 'less-loader',
-              options: lessLoaderOptions
+              options: {
+                ...lessLoaderOptions,
+                lessOptions: {
+                  javascriptEnabled: true,
+                  modifyVars: themeVariables
+                }
+              }
             }]
           })
         })

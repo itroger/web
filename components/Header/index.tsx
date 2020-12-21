@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react'
 import Link from 'next/link'
 import Vibrant from 'node-vibrant'
-import { IPage } from './index.d'
+import { PageType } from 'components/header'
 import styles from './index.less'
 
 const Header: React.FC = () => {
-  const [page, setPage] = useState<IPage>('Home')
+  const [page, setPage] = useState<PageType>('Home')
   const [navBackground, setNavBackground] = useState<string>()
   const [titleColor, setTitleColor] = useState<string>()
   const [navBackgroundVisible, setNavBackgroundVisible] = useState<boolean>(false)
