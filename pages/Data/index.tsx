@@ -4,7 +4,6 @@ import Card from './components/Card'
 import styles from './index.less'
 import { CardListType } from 'pages/data'
 
-
 const Data: React.FC = () => {
   const cardList: CardListType[] = [
     {
