@@ -11,11 +11,11 @@ export interface CardListType {
   link: string
 }
 
-export interface ListProps extends BaseType{
+export interface ListProps extends BaseType {
   id: string,
   name: string,
   category: string[],
   level: string,
-  link?: string,
+  mdx?: string,
   title?: boolean
 }

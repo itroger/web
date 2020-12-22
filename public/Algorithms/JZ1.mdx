@@ -16,18 +16,17 @@
 
 ---
 
-### JavaScript 实现
+### TypeScript 实现
 
-```javascript
-function Find(target, array)
-{
-    let returnBoolean = false
-    array.forEach(item => {
-        if(item.includes(target)) {
-            returnBoolean = true
-        }
-    })
+```typescript
+const find = (target: number, array: [number[]]) => {
+  let result: boolean = false
+  array.forEach(item => {
+    if (item.includes(target)) {
+      result = true
+    }
+  })
 
-    return returnBoolean
+  return result
 }
 ```

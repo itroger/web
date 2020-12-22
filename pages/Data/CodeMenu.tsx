@@ -11,20 +11,20 @@ const CodeMenu: React.FC = () => {
       name: '二维数组中的查找',
       category: ['数组', '查找'],
       level: '较难',
-      link: '/Data/Code'
+      mdx: 'JZ1'
     },
     {
       id: 'JZ2',
       name: '替换空格',
       category: ['字符串'],
       level: '较难',
-      link: '/Data/Code'
+      mdx: 'JZ2'
     }
   ]
 
   return <div className={styles.codeMenu}>
     <List id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
-    {list.map(item => <Link href={item.link} key={item.id}>
+    {list.map(item => <Link href='/Data/Code' key={item.id}>
       <a className={styles.linkA}>
         <List
           id={item.id}
