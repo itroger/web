@@ -1,5 +1,6 @@
 @import "/assets/antd-custom.less";
 
+// index.tsx
 .data {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,6 +10,7 @@
   padding: 10px;
 }
 
+// ./components/Card.tsx
 .card {
   height: 100%;
   border-radius: 4px;
@@ -37,6 +39,7 @@
   }
 }
 
+// ./components/List.tsx
 .list {
   display: grid;
   grid-template-columns: 50px auto 120px 30px;
@@ -66,8 +69,8 @@
   }
 }
 
+// CodeMenu.tsx
 .codeMenu {
-  //max-width: 800px;
   margin: 0 auto;
 
   .title {
@@ -88,6 +91,14 @@
       background-color: #fff;
     }
   }
+}
+
+// Code.tsx
+.code {
+  max-width: 860px;
+  margin: 20px auto 20px auto;
+  padding: 20px 30px;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 666px) {

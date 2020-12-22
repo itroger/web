@@ -11,14 +11,14 @@ const CodeMenu: React.FC = () => {
       name: '二维数组中的查找',
       category: ['数组', '查找'],
       level: '较难',
-      link: '/Algorithms/JZ1'
+      link: '/Data/Code'
     },
     {
       id: 'JZ2',
       name: '替换空格',
       category: ['字符串'],
       level: '较难',
-      link: '/Algorithms/JZ1'
+      link: '/Data/Code'
     }
   ]
 

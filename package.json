@@ -29,12 +29,14 @@
     "next-compose-plugins": "^2.2.1",
     "node-vibrant": "^3.1.6",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-syntax-highlighter": "^15.4.3"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@types/node": "^14.14.11",
     "@types/react": "^17.0.0",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "babel-loader": "^8.2.2",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
