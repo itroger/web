@@ -47,33 +47,35 @@ const Header: React.FC = () => {
       padding: navBackgroundVisible ? '0 5vw' : null
     }}>
       <div className={styles.content}>
-        <div className={styles.logo}>
-          <Link href='/'>
-            <img src='/icons/heart.png' alt='logo' onClick={() => setPage('Home')} />
-          </Link>
-          <div style={{color: titleColor}}>挥墨书未来</div>
+        <div>
+          <div className={styles.logo}>
+            <Link href='/'>
+              <img src='/icons/heart.png' alt='logo' onClick={() => setPage('Home')} />
+            </Link>
+            <div style={{color: titleColor}}>挥墨书未来</div>
+          </div>
+          <ul className={styles.menu}>
+            <li className={page === 'Home' ? styles.isActive: null}>
+              <Link href='/' ><a onClick={() => setPage('Home')}>首页</a></Link>
+            </li>
+            <li className={page === 'Life' ? styles.isActive: null}>
+              <Link href='/Life'><a onClick={() => setPage('Life')}>生活</a></Link>
+            </li>
+            <li className={page === 'Visual' ? styles.isActive: null}>
+              <Link href='/Visual'><a onClick={() => setPage('Visual')}>可视化</a></Link>
+            </li>
+            <li className={page === 'Data' ? styles.isActive: null}>
+              <Link href='/Data'><a onClick={() => setPage('Data')}>数据</a></Link>
+            </li>
+            <li className={page === 'About' ? styles.isActive: null}>
+              <Link href='/About'><a onClick={() => setPage('About')}>关于</a></Link>
+            </li>
+          </ul>
         </div>
-        <ul className={styles.menu}>
-          <li className={page === 'Home' ? styles.isActive: null}>
-            <Link href='/' ><a onClick={() => setPage('Home')}>首页</a></Link>
-          </li>
-          <li className={page === 'Life' ? styles.isActive: null}>
-            <Link href='/Life'><a onClick={() => setPage('Life')}>生活</a></Link>
-          </li>
-          <li className={page === 'Visual' ? styles.isActive: null}>
-            <Link href='/Visual'><a onClick={() => setPage('Visual')}>可视化</a></Link>
-          </li>
-          <li className={page === 'Data' ? styles.isActive: null}>
-            <Link href='/Data'><a onClick={() => setPage('Data')}>数据</a></Link>
-          </li>
-          <li className={page === 'About' ? styles.isActive: null}>
-            <Link href='/About'><a onClick={() => setPage('About')}>关于</a></Link>
-          </li>
-        </ul>
+        <a className={styles.github} href='https://github.com/itroger/web' target='_blank'>
+          <img src="/icons/github.svg" alt="github"/>
+        </a>
       </div>
-      <a className={styles.github} href='https://github.com/itroger/web' target='_blank'>
-        <img src="/icons/github.svg" alt="github"/>
-      </a>
     </nav>
   </header>
 }

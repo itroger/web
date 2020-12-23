@@ -16,81 +16,88 @@
 
     .content {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      width: 1000px;
+      width: 1080px;
+      padding: 0 10px;
 
-      .logo {
+      > div {
         display: flex;
-        align-content: center;
-        height: 50px;
+        align-items: center;
 
-        img {
-          width: 50px;
+        .logo {
+          display: flex;
+          align-content: center;
           height: 50px;
 
-          &:hover {
-            cursor: pointer;
-          }
-        }
-
-        div {
-          margin: 0 10px;
-          line-height: 50px;
-          font-size: 20px;
-          user-select: none;
-        }
-      }
-
-      .menu {
-        display: flex;
-        height: 100%;
-        margin: 0;
-
-        li {
-          display: flex;
-          align-items: center;
-          padding: 0 15px;
-          list-style: none;
-
-          a {
-            font-size: 18px;
-            font-weight: 600;
-            color: #fff;
-            opacity: .8;
-            user-select: none;
-
-            &::after {
-              content: "";
-              display: block;
-              width: 0;
-              height: 1px;
-              background-color: #fff;
-            }
+          img {
+            width: 50px;
+            height: 50px;
 
             &:hover {
-              opacity: 1;
-            }
-
-            &:hover::after {
-              width: 100%;
-              transition: all .35s ease-in-out;
+              cursor: pointer;
             }
           }
 
-          &.isActive {
+          div {
+            margin: 0 10px;
+            line-height: 50px;
+            font-size: 20px;
+            user-select: none;
+          }
+        }
+
+        .menu {
+          display: flex;
+          height: 100%;
+          margin: 0;
+
+          li {
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            list-style: none;
 
             a {
-              opacity: 1;
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              opacity: .8;
+              user-select: none;
+
+              &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: #fff;
+              }
+
+              &:hover {
+                opacity: 1;
+              }
+
+              &:hover::after {
+                width: 100%;
+                transition: all .35s ease-in-out;
+              }
+            }
+
+            &.isActive {
+
+              a {
+                opacity: 1;
+              }
             }
           }
         }
       }
-    }
 
-    .github {
-      img {
-        width: 35px;
-        height: 35px;
+      .github {
+        img {
+          width: 35px;
+          height: 35px;
+        }
       }
     }
   }
@@ -104,33 +111,37 @@
       height: 40px;
 
       .content {
-        .logo {
-          height: 40px;
+        padding: 0;
 
-          img {
-            width: 40px;
+        > div {
+          .logo {
             height: 40px;
+
+            img {
+              width: 40px;
+              height: 40px;
+            }
+
+            div {
+              display: none;
+            }
           }
 
-          div {
-            display: none;
-          }
-        }
-
-        .menu {
-          li {
-            padding: 0 5px;
-            a {
-              font-size: 14px;
+          .menu {
+            li {
+              padding: 0 5px;
+              a {
+                font-size: 14px;
+              }
             }
           }
         }
-      }
 
-      .github {
-        img {
-          width: 25px;
-          height: 25px;
+        .github {
+          img {
+            width: 25px;
+            height: 25px;
+          }
         }
       }
     }
