@@ -58,16 +58,22 @@ const Header: React.FC = () => {
             <Link href='/' ><a onClick={() => setPage('Home')}>首页</a></Link>
           </li>
           <li className={page === 'Life' ? styles.isActive: null}>
-            <Link href='/Life'><a onClick={() => setPage('Life')}>生活百态</a></Link>
+            <Link href='/Life'><a onClick={() => setPage('Life')}>生活</a></Link>
           </li>
           <li className={page === 'Visual' ? styles.isActive: null}>
-            <Link href='/Visual'><a onClick={() => setPage('Visual')}>数据可视化</a></Link>
+            <Link href='/Visual'><a onClick={() => setPage('Visual')}>可视化</a></Link>
           </li>
           <li className={page === 'Data' ? styles.isActive: null}>
-            <Link href='/Data'><a onClick={() => setPage('Data')}>数据结构</a></Link>
+            <Link href='/Data'><a onClick={() => setPage('Data')}>数据</a></Link>
+          </li>
+          <li className={page === 'About' ? styles.isActive: null}>
+            <Link href='/About'><a onClick={() => setPage('About')}>关于</a></Link>
           </li>
         </ul>
       </div>
+      <a className={styles.github} href='https://github.com/itroger/web' target='_blank'>
+        <img src="/icons/github.svg" alt="github"/>
+      </a>
     </nav>
   </header>
 }
