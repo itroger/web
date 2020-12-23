@@ -45,6 +45,8 @@ tsconfig.json     // TypeScript 配置文件
 - useState : 状态
 - useEffect : 生命周期
 - useRef : DOM 引用
+- useReducer: 状态组合
+- useContext: 共享状态
 
 ---
 
