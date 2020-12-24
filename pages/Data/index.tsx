@@ -1,33 +1,26 @@
 import React from 'react'
-import Link from 'next/link'
+import Router from 'next/router'
 import Card from './components/Card'
 import styles from './index.less'
 import { CardListType } from 'pages/data'
 
 const cardList: CardListType[] = [
   {
-    name: '数据结构',
-    background: '/images/background.jpg',
-    link: '/Algorithms/JZ1'
-  },
-  {
     name: '编程题库',
     background: '/images/background.jpg',
-    link: '/Data/CodeMenu'
-  },
-  {
-    name: '数据科学',
-    background: '/images/background.jpg',
-    link: '/Data/CodeMenu'
+    url: '/Data/CodeMenu'
   }
 ]
 
 const Data: React.FC = () => {
 
   return <div className={styles.data}>
-    {cardList.map(item => <Link href={item.link} key={item.name}>
-      <a><Card name={item.name} background={item.background} /></a>
-    </Link>)}
+    {cardList.map(item => <Card
+      name={item.name}
+      background={item.background}
+      key={item.name}
+      onClick={() => Router.push(item.url)}
+    />)}
   </div>
 }
 

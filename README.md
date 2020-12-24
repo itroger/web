@@ -4,7 +4,7 @@
 #### 3. 安装 TypeScript `npm install --save-dev typescript @types/react @types/node`
 #### 4. 安装 Less `npm install --save @zeit/next-less @zeit/next-css less less-loader less-vars-to-js`
 #### 5. 安装 AntD `npm install antd`
-#### 6. 安装 MDX `npm install @next/mdx @mdx-js/loader babel-loader`
+#### 6. 安装 MDX `npm install @next/mdx @mdx-js/loader babel-loader react-syntax-highlighter`
 
 ---
 
@@ -41,7 +41,12 @@ tsconfig.json     // TypeScript 配置文件
 ---
 
 ### 使用的技术要点
-### 1. React
+### 1. JavaScript
+- IntersectionObserver : 可视区域
+
+---
+
+### 2. React
 - useState : 状态
 - useEffect : 生命周期
 - useRef : DOM 引用
@@ -50,18 +55,21 @@ tsconfig.json     // TypeScript 配置文件
 
 ---
 
-### 2. TypeScript
+### 3. TypeScript
 - interface : 接口
 - type : 类型
 
 ---
 
-### 3. JavaScript
-- IntersectionObserver : 可视区域
+### 4. Next
+- next/app: 定制 app
+- next/head: 定制 head 标签 
+- next/link: 组件路由跳转
+- next/router: 路由跳转
 
 ---
 
-### 4. CSS
+### 5. CSS
 - flex: 一维布局
 - grid: 二维布局
 

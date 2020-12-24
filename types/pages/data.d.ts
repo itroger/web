@@ -2,13 +2,14 @@ import { BaseType } from 'base'
 
 export interface CardProps {
   name: string,
-  background: string
+  background: string,
+  onClick: () => void
 }
 
 export interface CardListType {
   name: string,
   background: string,
-  link: string
+  url: string
 }
 
 export interface ListProps extends BaseType {
@@ -17,5 +18,6 @@ export interface ListProps extends BaseType {
   category: string[],
   level: string,
   mdx?: string,
-  title?: boolean
+  title?: boolean,
+  onClick?: () => void
 }

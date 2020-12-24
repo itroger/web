@@ -1,9 +1,8 @@
-import React, {useContext} from 'react'
-import Link from 'next/link'
+import React from 'react'
 import List from './components/List'
 import styles from './index.less'
 import { ListProps } from 'pages/data'
-import {WebContext} from '../../store'
+import Router from 'next/router'
 
 const list: ListProps[] = [
   {
@@ -23,20 +22,17 @@ const list: ListProps[] = [
 ]
 
 const CodeMenu: React.FC = () => {
-  const { dispatch } = useContext(WebContext)
 
   return <div className={styles.codeMenu}>
     <List id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
-    {list.map(item => <Link href={'/Data/Code'} key={item.id}>
-      <a className={styles.linkA} onClick={() => dispatch({type: 'mdx', payload: {mdx: item.mdx}})}>
-        <List
-          id={item.id}
-          name={item.name}
-          category={item.category}
-          level={item.level}
-        />
-      </a>
-    </Link>)}
+    {list.map(item => <List
+      id={item.id}
+      name={item.name}
+      category={item.category}
+      level={item.level}
+      key={item.id}
+      onClick={() => Router.push({pathname: '/Data/Code', query: {mdx: item.mdx}})}
+    />)}
   </div>
 }
 

@@ -1,13 +1,14 @@
-import React, {useContext} from 'react'
+import React from 'react'
+import { useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
-import {WebContext} from '../../store'
 import components from '../../components/MDX'
 import styles from './index.less'
 import JZ1 from '@/public/Algorithms/JZ1.mdx'
 import JZ2 from '@/public/Algorithms/JZ2.mdx'
 
 const Code: React.FC = () => {
-  const {state: {mdx}} = useContext(WebContext)
+  const router = useRouter()
+  const { mdx } = router.query
 
   const renderMDX = () => {
     switch (mdx) {

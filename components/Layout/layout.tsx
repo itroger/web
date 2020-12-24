@@ -16,7 +16,7 @@ const Layout:React.FC<LayoutProps> = props => {
         <meta name='viewpoint' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Header />
-      <main className={styles.main}>{ children }</main>
+      <main className={`${styles.main} ${page === 'home' ? styles.home : null}`}>{ children }</main>
       {page === 'home' ? <Footer /> : null}
     </div>
   )

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import Link from 'next/link'
+import Router from 'next/router'
 import Vibrant from 'node-vibrant'
 import { PageType } from 'components/header'
 import styles from './index.less'
@@ -40,6 +40,12 @@ const Header: React.FC = () => {
     io.observe(navRef.current)
   }, [navBackgroundVisible])
 
+  // 路由跳转
+  const router = async (page: PageType) => {
+    await setPage(page)
+    await Router.push(page === 'Home' ? '/' : `/${page}`)
+  }
+
   return <header className={styles.header} ref={navRef}>
     <nav style={{
       background: navBackgroundVisible ? navBackground : null,
@@ -49,26 +55,39 @@ const Header: React.FC = () => {
       <div className={styles.content}>
         <div>
           <div className={styles.logo}>
-            <Link href='/'>
-              <img src='/icons/heart.png' alt='logo' onClick={() => setPage('Home')} />
-            </Link>
+            <img src='/icons/heart.png' alt='logo' onClick={() => router('Home')} />
             <div style={{color: titleColor}}>挥墨书未来</div>
           </div>
           <ul className={styles.menu}>
-            <li className={page === 'Home' ? styles.isActive: null}>
-              <Link href='/' ><a onClick={() => setPage('Home')}>首页</a></Link>
+            <li
+              className={page === 'Home' ? styles.isActive: null}
+              onClick={() => router('Home')}
+            >
+              <a>首页</a>
             </li>
-            <li className={page === 'Life' ? styles.isActive: null}>
-              <Link href='/Life'><a onClick={() => setPage('Life')}>生活</a></Link>
+            <li
+              className={page === 'Life' ? styles.isActive: null}
+              onClick={() => router('Life')}
+            >
+              <a>生活</a>
             </li>
-            <li className={page === 'Visual' ? styles.isActive: null}>
-              <Link href='/Visual'><a onClick={() => setPage('Visual')}>可视化</a></Link>
+            <li
+              className={page === 'Visual' ? styles.isActive: null}
+              onClick={() => router('Visual')}
+            >
+              <a>可视化</a>
             </li>
-            <li className={page === 'Data' ? styles.isActive: null}>
-              <Link href='/Data'><a onClick={() => setPage('Data')}>数据</a></Link>
+            <li
+              className={page === 'Data' ? styles.isActive: null}
+              onClick={() => router('Data')}
+            >
+              <a>数据</a>
             </li>
-            <li className={page === 'About' ? styles.isActive: null}>
-              <Link href='/About'><a onClick={() => setPage('About')}>关于</a></Link>
+            <li
+              className={page === 'About' ? styles.isActive: null}
+              onClick={() => router('About')}
+            >
+              <a>关于</a>
             </li>
           </ul>
         </div>
