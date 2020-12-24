@@ -2,15 +2,15 @@ import {ActionType, ReducerType, StateType} from 'store'
 import {Context, createContext, Dispatch} from 'react'
 
 const initialState: StateType = {
-  mdx: ''
+  page: 'Home'
 }
 
 const reducer: ReducerType = (state: StateType, action: ActionType) => {
-  const { type, payload: { mdx } } = action
+  const { type, payload } = action
 
   switch (type) {
-    case 'mdx':
-      return {...state, mdx}
+    case 'page':
+      return {...state, page: payload.page}
   }
 }
 

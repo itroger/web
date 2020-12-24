@@ -1,11 +1,12 @@
 import React from 'react'
+import {PageType} from 'components/header'
 
 export interface StateType {
-  mdx?: string
+  page?: PageType
 }
 
 export interface ActionType {
-  type: string | 'mdx',
+  type: string | 'page',
   payload: StateType
 }
 

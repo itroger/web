@@ -10,7 +10,6 @@
 
 ### 项目结构
 ```shell
-.next/            // 打包输出文件
 assets/           // 脚本样式静态文件
 build/            // 打包输出文件
 components/       // 组件
@@ -18,6 +17,7 @@ node_modules/     // 依赖包
 out/              // 打包输出静态部署文件
 pages/            // 页面
 public/           // 图片资源静态文件
+store/            // 全局状态
 types/            // 全局类型文件
 .babelrc          // babel 配置文件
 .gitignore        // git 忽略文件
@@ -33,16 +33,18 @@ tsconfig.json     // TypeScript 配置文件
 ---
 
 ### 使用的依赖包
-- @zeit/next-less: CSS 处理器
+- @zeit/next-less : CSS 处理器
 - antd : React UI 框架
 - node-vibrant : 取图片底色
-- @next/mdx: 组件化 Markdown
+- @next/mdx : 组件化 Markdown
+- react-syntax-highlighter : 语法高亮
 
 ---
 
 ### 使用的技术要点
 ### 1. JavaScript
 - IntersectionObserver : 可视区域
+- localStorage : 本地缓存
 
 ---
 
@@ -50,8 +52,8 @@ tsconfig.json     // TypeScript 配置文件
 - useState : 状态
 - useEffect : 生命周期
 - useRef : DOM 引用
-- useReducer: 状态组合
-- useContext: 共享状态
+- useReducer : 状态组合
+- useContext : 共享状态
 
 ---
 
@@ -62,22 +64,22 @@ tsconfig.json     // TypeScript 配置文件
 ---
 
 ### 4. Next
-- next/app: 定制 app
-- next/head: 定制 head 标签 
-- next/link: 组件路由跳转
-- next/router: 路由跳转
+- next/app : 定制 app
+- next/head : 定制 head 标签 
+- next/link : 组件路由跳转
+- next/router : 路由跳转
 
 ---
 
 ### 5. CSS
-- flex: 一维布局
-- grid: 二维布局
+- flex : 一维布局
+- grid : 二维布局
 
 ---
 
 ### 5. 配置
-- next.config.js: next && webpack 配置
-- .babelrc: babel 配置
-- tsconfig.json: typescript 配置
-- cloudbaserc.json: 腾讯云开发配置
-- .gitignore: Git 忽略文件
+- next.config.js : next && webpack 配置
+- .babelrc : babel 配置
+- tsconfig.json : typescript 配置
+- cloudbaserc.json : 腾讯云开发配置
+- .gitignore : Git 忽略文件

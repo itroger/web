@@ -1,15 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import Router from 'next/router'
 import Vibrant from 'node-vibrant'
 import { PageType } from 'components/header'
 import styles from './index.less'
+import {WebContext} from '../../store'
 
 const Header: React.FC = () => {
-  const [page, setPage] = useState<PageType>('Home')
   const [navBackground, setNavBackground] = useState<string>()
   const [titleColor, setTitleColor] = useState<string>()
   const [navBackgroundVisible, setNavBackgroundVisible] = useState<boolean>(false)
   const navRef = useRef()
+  const { state: { page }, dispatch } = useContext(WebContext)
 
   // 导航栏背景色和标题颜色
   useEffect(() => {
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
 
   // 路由跳转
   const router = async (page: PageType) => {
-    await setPage(page)
+    await dispatch({type: 'page', payload: {page}})
     await Router.push(page === 'Home' ? '/' : `/${page}`)
   }
 
