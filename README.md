@@ -77,7 +77,7 @@ tsconfig.json     // TypeScript 配置文件
 
 ---
 
-### 5. 配置
+### 6. 配置
 - next.config.js : next && webpack 配置
 - .babelrc : babel 配置
 - tsconfig.json : typescript 配置

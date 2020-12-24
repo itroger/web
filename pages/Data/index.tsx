@@ -8,7 +8,7 @@ const cardList: CardListType[] = [
   {
     name: '编程题库',
     background: '/images/background.jpg',
-    url: '/Data/CodeMenu'
+    url: '/Data/Code/Home'
   }
 ]
 

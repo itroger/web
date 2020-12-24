@@ -1,12 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
-import components from '../../components/MDX'
-import styles from './index.less'
+import components from '../../../components/MDX'
+import styles from './Code.less'
 import JZ1 from '@/public/Algorithms/JZ1.mdx'
 import JZ2 from '@/public/Algorithms/JZ2.mdx'
 
-const Code: React.FC = () => {
+const Context: React.FC = () => {
   const router = useRouter()
   const { mdx } = router.query
 
@@ -19,11 +19,11 @@ const Code: React.FC = () => {
     }
   }
 
-  return <div className={styles.code}>
+  return <div className={styles.context}>
     <MDXProvider components={components} >
       {renderMDX()}
     </MDXProvider>
   </div>
 }
 
-export default Code
+export default Context

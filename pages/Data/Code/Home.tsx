@@ -1,6 +1,6 @@
 import React from 'react'
-import List from './components/List'
-import styles from './index.less'
+import List from '../components/List'
+import styles from './Code.less'
 import { ListProps } from 'pages/data'
 import Router from 'next/router'
 
@@ -21,19 +21,20 @@ const list: ListProps[] = [
   }
 ]
 
-const CodeMenu: React.FC = () => {
+const Home: React.FC = () => {
 
-  return <div className={styles.codeMenu}>
+  return <div className={styles.home}>
     <List id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
     {list.map(item => <List
+      className={styles.codeMenuItem}
       id={item.id}
       name={item.name}
       category={item.category}
       level={item.level}
       key={item.id}
-      onClick={() => Router.push({pathname: '/Data/Code', query: {mdx: item.mdx}})}
+      onClick={() => Router.push({pathname: '/Data/Code/Context', query: {mdx: item.mdx}})}
     />)}
   </div>
 }
 
-export default CodeMenu
+export default Home
