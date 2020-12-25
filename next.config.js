@@ -13,7 +13,6 @@ module.exports = withPlugins([
   }),
   (nextConfig = {}) => {
     return Object.assign({}, nextConfig, {
-      distDir: 'build',
 
       webpack: (config, options) => {
         const {dev, isServer} = options

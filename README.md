@@ -10,8 +10,8 @@
 
 ### 项目结构
 ```shell
+.next/            // 打包输出文件
 assets/           // 脚本样式静态文件
-build/            // 打包输出文件
 components/       // 组件
 node_modules/     // 依赖包
 out/              // 打包输出静态部署文件
