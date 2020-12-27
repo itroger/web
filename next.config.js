@@ -12,8 +12,8 @@ module.exports = withPlugins([
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
   }),
   (nextConfig = {}) => {
-    return Object.assign({}, nextConfig, {
 
+    return Object.assign({}, nextConfig, {
       webpack: (config, options) => {
         const {dev, isServer} = options
         const { lessLoaderOptions = {} } = nextConfig

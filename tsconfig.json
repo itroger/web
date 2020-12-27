@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "*": ["types/*"]
+      "*": [
+        "types/*"
+      ]
     },
     "target": "ESNext",
     "lib": [
@@ -18,6 +20,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "outDir": "./server",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"

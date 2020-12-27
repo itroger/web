@@ -1,10 +1,16 @@
-### 新建 Next 项目
+### Next 前端架构
 #### 1. 初始化项目 `npm init`
 #### 2. 安装 Next `npm install next react react-dom`
-#### 3. 安装 TypeScript `npm install --save-dev typescript @types/react @types/node`
-#### 4. 安装 Less `npm install --save @zeit/next-less @zeit/next-css less less-loader less-vars-to-js`
+#### 3. 安装 TypeScript `npm install -D typescript @types/react @types/node`
+#### 4. 安装 Less `npm install @zeit/next-less @zeit/next-css less less-loader less-vars-to-js`
 #### 5. 安装 AntD `npm install antd`
 #### 6. 安装 MDX `npm install @next/mdx @mdx-js/loader babel-loader react-syntax-highlighter`
+
+---
+
+### Koa 服务端架构
+#### 1. 安装 Koa `npm install koa @types/koa`
+#### 2. 安装 Node `npm install -D ts-node nodemon`
 
 ---
 
@@ -17,6 +23,7 @@ node_modules/     // 依赖包
 out/              // 打包输出静态部署文件
 pages/            // 页面
 public/           // 图片资源静态文件
+server/           // 服务端代码
 store/            // 全局状态
 types/            // 全局类型文件
 .babelrc          // babel 配置文件
@@ -24,6 +31,7 @@ types/            // 全局类型文件
 couldbaserc.json  // 腾讯云开发配置文件
 next.config.js    // next 配置文件
 next-env.d.ts     // next 类型文件
+nodemon.json      // nodemon 配置文件
 package.json      // 项目配置文件
 package-lock.json // 项目配置文件
 README.md         // 项目说明文档

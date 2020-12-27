@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "debug": false,
+  "exec": "node --loader ts-node/esm ./server/app.ts",
+  "events": {
+    "restart": ""
+  },
+  "watch": ["./server/"],
+  "ext": "ts",
+  "inspect": true
+}
