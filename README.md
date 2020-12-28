@@ -50,13 +50,13 @@ tsconfig.json     // TypeScript 配置文件
 ---
 
 ### 使用的技术要点
-### 1. JavaScript
+#### 1. JavaScript
 - IntersectionObserver : 可视区域
 - localStorage : 本地缓存
 
 ---
 
-### 2. React
+#### 2. React
 - useState : 状态
 - useEffect : 生命周期
 - useRef : DOM 引用
@@ -65,13 +65,13 @@ tsconfig.json     // TypeScript 配置文件
 
 ---
 
-### 3. TypeScript
+#### 3. TypeScript
 - interface : 接口
 - type : 类型
 
 ---
 
-### 4. Next
+#### 4. Next
 - next/app : 定制 app
 - next/head : 定制 head 标签 
 - next/link : 组件路由跳转
@@ -79,15 +79,22 @@ tsconfig.json     // TypeScript 配置文件
 
 ---
 
-### 5. CSS
+#### 5. CSS
 - flex : 一维布局
 - grid : 二维布局
 
 ---
 
-### 6. 配置
+#### 6. 配置
 - next.config.js : next && webpack 配置
 - .babelrc : babel 配置
 - tsconfig.json : typescript 配置
 - cloudbaserc.json : 腾讯云开发配置
 - .gitignore : Git 忽略文件
+
+
+### 项目搭建可能遇到的问题
+- ### 使用 less 和 cssModules
+1. 安装 less
+
+

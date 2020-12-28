@@ -1,5 +1,5 @@
-const Koa = require('koa')
-const next = require('next')
+import Koa from 'koa'
+import next from 'next'
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -14,3 +14,5 @@ app.prepare().then(() => {
 
   server.listen(3000, () => console.log('Server is listing on http://localhost:3000'))
 })
+
+

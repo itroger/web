@@ -23,7 +23,8 @@
     "outDir": "./server",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "sourceMap": true
   },
   "include": [
     "next-env.d.ts",
@@ -31,6 +32,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "next.config.js"
   ]
 }
