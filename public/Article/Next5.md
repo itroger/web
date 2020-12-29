@@ -163,6 +163,7 @@ export default components
 - 创建 `components/mdx.less` 作为 `mdx` 组件样式
 
 ```less
+// components/mdx.less
 @import "/assets/antd-custom";
 
 .p, .u, .blockquote, .ul, .ol, .dl, .table, .h1, .h2, .h3, .h4, .h5, .h6 {
