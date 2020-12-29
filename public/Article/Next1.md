@@ -1,8 +1,4 @@
----
-主题: Next
----
-
-## Next 项目之手动创建
+## Next 项目之 手动创建
 
 ### 1. 项目初始化
 
@@ -25,10 +21,12 @@ npm install next react react-dom
 ---
 
 ```json
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start"
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  }
 }
 ```
 

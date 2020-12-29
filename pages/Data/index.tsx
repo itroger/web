@@ -9,6 +9,11 @@ const cardList: CardListType[] = [
     name: '编程题库',
     background: '/images/background.jpg',
     url: '/Data/Code/Home'
+  },
+  {
+    name: 'Next项目搭建',
+    background: '/images/background.jpg',
+    url: '/Data/Article/Home'
   }
 ]
 

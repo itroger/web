@@ -39,8 +39,8 @@
   }
 }
 
-// ./components/List.tsx
-.list {
+// ./components/CodeList.tsx
+.codeList, .articleList {
   display: grid;
   grid-template-columns: 50px auto 120px 30px;
   grid-template-rows: 50px;
@@ -66,6 +66,17 @@
     padding: 2px 10px;
     border-radius: 10px;
     background-color: #eee;
+  }
+}
+
+// ./components/ArticleList.tsx
+.articleList {
+  grid-template-columns: auto 60px 80px;
+
+  > p {
+    &:first-child {
+      font-weight: 600;
+    }
   }
 }
 

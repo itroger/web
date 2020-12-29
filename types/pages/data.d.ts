@@ -12,11 +12,20 @@ export interface CardListType {
   url: string
 }
 
-export interface ListProps extends BaseType {
+export interface CodeListProps extends BaseType {
   id: string,
   name: string,
   category: string[],
   level: string,
+  mdx?: string,
+  title?: boolean,
+  onClick?: () => void
+}
+
+export interface ArticleListProps extends BaseType {
+  name: string,
+  category: string[],
+  time: string,
   mdx?: string,
   title?: boolean,
   onClick?: () => void

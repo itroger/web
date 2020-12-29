@@ -1,2 +1,3 @@
 declare module '*.less'
-declare module '*.html'
+declare module '*.md'
+declare module '*.mdx'

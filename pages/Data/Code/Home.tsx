@@ -1,10 +1,10 @@
 import React from 'react'
-import List from '../components/List'
+import CodeList from '../components/CodeList'
 import styles from './Code.less'
-import { ListProps } from 'pages/data'
+import { CodeListProps } from 'pages/data'
 import Router from 'next/router'
 
-const list: ListProps[] = [
+const list: CodeListProps[] = [
   {
     id: 'JZ1',
     name: '二维数组中的查找',
@@ -22,10 +22,9 @@ const list: ListProps[] = [
 ]
 
 const Home: React.FC = () => {
-
   return <div className={styles.home}>
-    <List id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
-    {list.map(item => <List
+    <CodeList id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
+    {list.map(item => <CodeList
       className={styles.codeMenuItem}
       id={item.id}
       name={item.name}

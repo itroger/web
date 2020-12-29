@@ -1,7 +1,3 @@
----
-主题: Next
----
-
 ## Next 项目之 Less
 
 ### 1. 安装 `@zeit/next-less`
@@ -49,7 +45,7 @@ import React from 'react'
 import './index.less'
 
 const Home: React.FC = () => {
-  return <div className='home'>Hello TypeScript</div>
+  return <div className='home'>Hello Less</div>
 }
 
 export default Home
@@ -99,7 +95,7 @@ import React from 'react'
 import styles from './index.less'
 
 const Home: React.FC = () => {
-  return <div className={styles.home}>Hello TypeScript</div>
+  return <div className={styles.home}>Hello Less</div>
 }
 
 export default Home

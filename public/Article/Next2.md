@@ -1,7 +1,3 @@
----
-主题: Next
----
-
 ## Next 项目之 TypeScript
 
 ### 1. 安装 TypeScript
@@ -17,6 +13,7 @@ npm install -D typescript @types/react @types/node
 ---
 
 ```tsx
+// pages/index.tsx
 import React from 'react'
 
 const Home: React.FC = () => {

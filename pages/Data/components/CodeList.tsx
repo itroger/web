@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from '../index.less'
-import { ListProps } from 'pages/data'
+import { CodeListProps } from 'pages/data'
 
-const List: React.FC<ListProps> = props => {
+const CodeList: React.FC<CodeListProps> = props => {
   const { id, name, category = [], level, style, className, title, onClick } = props
 
-  return <div className={`${styles.list} ${className}`} style={style} onClick={onClick}>
+  return <div className={`${styles.codeList} ${className}`} style={style} onClick={onClick}>
     <p>{id}</p>
     <p>{name}</p>
     <p>{title ? category[0] : category.map(item => <span key={item} className={styles.category}>{item}</span>)}</p>
@@ -13,4 +13,4 @@ const List: React.FC<ListProps> = props => {
   </div>
 }
 
-export default List
+export default CodeList
