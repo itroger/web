@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import Router from 'next/router'
+import request from '../../../services/request'
 import CodeList from '../components/CodeList'
 import styles from './Code.less'
 import { CodeListProps } from 'pages/data'
-import Router from 'next/router'
+
 
 const list: CodeListProps[] = [
   {
@@ -22,6 +24,12 @@ const list: CodeListProps[] = [
 ]
 
 const Home: React.FC = () => {
+
+  useEffect(() => {
+    const res = request('/algorithmQuery', 'GET')
+    console.log(res)
+  }, [])
+
   return <div className={styles.home}>
     <CodeList id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
     {list.map(item => <CodeList
