@@ -13,11 +13,11 @@ export interface CardListType {
 }
 
 export interface CodeListProps extends BaseType {
-  component: string,
+  component?: string,
   name: string,
   category: string,
   level: string,
-  mdx?: string,
+  url?: string,
   title?: boolean,
   onClick?: () => void
 }

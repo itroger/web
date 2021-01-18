@@ -19,12 +19,11 @@ const Home: React.FC = () => {
     <CodeList component='题号' name='题目' category={'知识点'} level='难度' title={true} className={styles.title}/>
     {list.map(item => <CodeList
       className={styles.codeMenuItem}
-      component={item.component}
       name={item.name}
       category={item.category}
       level={item.level}
       key={item.component}
-      onClick={() => Router.push({pathname: '/Data/Code/Context', query: {mdx: item.mdx}})}
+      onClick={() => Router.push({pathname: '/Data/Code/Context', query: {component: item.component, url: item.url}})}
     />)}
   </div>
 }
