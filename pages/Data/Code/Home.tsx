@@ -1,42 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Router from 'next/router'
-import request from '../../../services/request'
+import { algorithmQuery } from './services'
 import CodeList from '../components/CodeList'
 import styles from './Code.less'
-import { CodeListProps } from 'pages/data'
-
-
-const list: CodeListProps[] = [
-  {
-    id: 'JZ1',
-    name: '二维数组中的查找',
-    category: ['数组', '查找'],
-    level: '较难',
-    mdx: 'JZ1'
-  },
-  {
-    id: 'JZ2',
-    name: '替换空格',
-    category: ['字符串'],
-    level: '较难',
-    mdx: 'JZ2'
-  }
-]
+import {CodeListProps} from 'pages/data'
 
 const Home: React.FC = () => {
+  const [list, setList] = useState<CodeListProps[]>([])
 
-  const result = request('/documentQuery', 'GET')
-  console.log(result.data)
+  useEffect(() => {
+    algorithmQuery().then(res => {
+      setList(res.result.data)
+    })
+  }, [])
+
 
   return <div className={styles.home}>
-    <CodeList id='题号' name='题目' category={['知识点']} level='难度' title={true} className={styles.title}/>
+    <CodeList component='题号' name='题目' category={'知识点'} level='难度' title={true} className={styles.title}/>
     {list.map(item => <CodeList
       className={styles.codeMenuItem}
-      id={item.id}
+      component={item.component}
       name={item.name}
       category={item.category}
       level={item.level}
-      key={item.id}
+      key={item.component}
       onClick={() => Router.push({pathname: '/Data/Code/Context', query: {mdx: item.mdx}})}
     />)}
   </div>
