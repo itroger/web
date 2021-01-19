@@ -1,26 +1,28 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React, {useEffect, useState} from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import components from '../../../components/MDX'
-import { getComponent } from './services'
+import JZ1 from '@/public/Algorithms/JZ1.md'
+import { cos } from '../../../utils/cos'
 import styles from './Code.less'
 
 const Context: React.FC = () => {
-  const router = useRouter()
-  const { component, url } = router.query
-
-  const renderMDX = async () => {
-    switch (component) {
-      case 'JZ1': await getComponent(url)
-        return
-      case 'JZ2':
-        return await getComponent(url)
-    }
+  const [content, setContent] = useState<string>()
+  const renderMDX = () => {
+    cos.getObject({
+      Bucket: 'server-1251003503',
+      Region: 'ap-guangzhou',
+      Key: 'document/JZ1.md'
+    }).then(res => setContent(res.Body))
   }
 
+  useEffect(() => {
+    renderMDX()
+  }, [])
+
   return <div className={styles.context}>
+    <JZ1 />
     <MDXProvider components={components} >
-      {/*{renderMDX()}*/}
+      {content}
     </MDXProvider>
   </div>
 }

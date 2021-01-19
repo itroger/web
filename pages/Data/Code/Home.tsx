@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       category={item.category}
       level={item.level}
       key={item.component}
-      onClick={() => Router.push({pathname: '/Data/Code/Context', query: {component: item.component, url: item.url}})}
+      onClick={() => Router.push({ pathname: '/Data/Code/Context' })}
     />)}
   </div>
 }

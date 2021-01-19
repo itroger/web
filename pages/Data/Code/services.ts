@@ -4,5 +4,6 @@ export const algorithmQuery = async () => {
 }
 
 export const getComponent = async (url: string) => {
+  console.log(url)
   return (await fetch(url))
 }
