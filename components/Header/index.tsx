@@ -3,7 +3,7 @@ import Router from 'next/router'
 import Vibrant from 'node-vibrant'
 import { PageType } from 'components/header'
 import styles from './index.less'
-import {WebContext} from '../../store'
+import { WebContext } from '../../store'
 
 const Header: React.FC = () => {
   const [navBackground, setNavBackground] = useState<string>()

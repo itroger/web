@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../index.less'
-import { ArticleListProps } from 'pages/data'
+import styles from '../../pages/Data/index.less'
+import { ArticleListProps } from 'components/page'
 
 const ArticleList: React.FC<ArticleListProps> = props => {
   const { name, category = [], time, style, className, title, onClick } = props

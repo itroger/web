@@ -17,12 +17,12 @@
 ### 项目结构
 ```shell
 .next/            // 打包输出文件
-assets/           // 脚本样式静态文件
-components/       // 组件
+assets/           // ant design 全局样式设置文件
+components/       // react UI 组件
 node_modules/     // 依赖包
 out/              // 打包输出静态部署文件
-pages/            // 页面
-public/           // 图片资源静态文件
+pages/            // next 页面路由文件
+public/           // 静态资源文件
 server/           // 服务端代码
 store/            // 全局状态
 types/            // 全局类型文件

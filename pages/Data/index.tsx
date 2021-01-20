@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
-import Card from './components/Card'
+import Card from '../../components/Page/Card'
 import styles from './index.less'
 import { CardListType } from 'pages/data'
 
@@ -8,12 +8,14 @@ const cardList: CardListType[] = [
   {
     name: '编程题库',
     background: '/images/background.jpg',
-    url: '/Data/Code/Home'
+    url: '/Data/Menu',
+    attribute: 'algorithm'
   },
   {
     name: 'Next项目搭建',
     background: '/images/background.jpg',
-    url: '/Data/Article/Home'
+    url: '/Data/Menu',
+    attribute: 'next'
   }
 ]
 
@@ -24,7 +26,7 @@ const Data: React.FC = () => {
       name={item.name}
       background={item.background}
       key={item.name}
-      onClick={() => Router.push(item.url)}
+      onClick={() => Router.push({ pathname: item.url, query: { attribute: item.attribute } }, item.url)}
     />)}
   </div>
 }

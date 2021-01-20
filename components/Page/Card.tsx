@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../index.less'
-import { CardProps } from 'pages/data'
+import styles from '../../pages/Data/index.less'
+import { CardProps } from 'components/page'
 
 const Card: React.FC<CardProps> = props => {
   const { name, background, onClick } = props

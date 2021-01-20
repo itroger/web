@@ -9,6 +9,51 @@
   grid-row-gap: 10px;
 }
 
+// Menu.tsx
+.menu {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+
+  .title {
+    background-color: #f7f8fb;
+
+    &:hover {
+      cursor: default;
+      background-color: #f7f8fb;
+    }
+  }
+
+  .codeMenuItem {
+    &:nth-child(odd) {
+      background-color: #f7f8f9;
+    }
+
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: @primary-1;
+    }
+  }
+}
+
+.code {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  background-color: #ffffff;
+}
+
+
+
+
+
+
+
 // ./components/Card.tsx
 .card {
   height: 100%;
@@ -39,7 +84,7 @@
   }
 }
 
-// ./components/CodeList.tsx
+// ./components/Menu.tsx
 .codeList, .articleList {
   display: grid;
   grid-template-columns: 50px auto 120px 30px;
