@@ -6,3 +6,7 @@ export interface CardListType {
   url: string,
   attribute: AttributeType
 }
+
+export interface CodeProps {
+  source: string
+}

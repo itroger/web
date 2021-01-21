@@ -7,11 +7,6 @@ const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, './asset
 
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
-    head: {
-      script: [
-        {src: 'https://unpkg.com/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js'}
-      ]
-    },
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
     webpack: (config, options) => {
       const {dev, isServer} = options
