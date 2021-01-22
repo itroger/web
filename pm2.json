@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "web",
+      "script": "./node_modules/.bin/ts-node",
+      "args": "-T -r tsconfig-paths/register ./server/app.ts",
+      "cwd": "./",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      },
+      "kill_timeout": 10000,
+      "wait_ready": true,
+      "watch": ["server"],
+      "ignore_watch": ["node_modules"],
+      "watch_options": {
+        "usePolling": true
+      }
+    }
+  ]
+}
