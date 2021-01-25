@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../pages/Data/index.less'
+import styles from '../../pages/data/index.less'
 import { CardProps } from 'components/page'
 
 const Card: React.FC<CardProps> = props => {

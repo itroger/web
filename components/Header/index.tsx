@@ -1,16 +1,18 @@
 import React, {useContext, useEffect, useRef, useState} from 'react'
 import Router from 'next/router'
 import Vibrant from 'node-vibrant'
-import { PageType } from 'components/header'
+import {HeaderProps, PageType} from 'components/header'
 import styles from './index.less'
 import { WebContext } from '../../store'
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = props => {
   const [navBackground, setNavBackground] = useState<string>()
   const [titleColor, setTitleColor] = useState<string>()
   const [navBackgroundVisible, setNavBackgroundVisible] = useState<boolean>(false)
   const navRef = useRef()
   const { state: { page }, dispatch } = useContext(WebContext)
+
+  const { fullScreen } = props
 
   // 导航栏背景色和标题颜色
   useEffect(() => {
@@ -44,10 +46,10 @@ const Header: React.FC = () => {
   // 路由跳转
   const router = async (page: PageType) => {
     await dispatch({type: 'page', payload: {page}})
-    await Router.push(page === 'Home' ? '/' : `/${page}`)
+    await Router.push( page === 'home' ? '/index' : `/${page}`, page === 'home' ? '/' : `/${page}`)
   }
 
-  return <header className={styles.header} ref={navRef}>
+  return <header className={`${styles.header} ${fullScreen ? styles.fullScreen : null}`} ref={navRef}>
     <nav style={{
       background: navBackgroundVisible ? navBackground : null,
       position: navBackgroundVisible ? 'fixed' : null,
@@ -56,37 +58,37 @@ const Header: React.FC = () => {
       <div className={styles.content}>
         <div>
           <div className={styles.logo}>
-            <img src='/icons/heart.png' alt='logo' onClick={() => router('Home')} />
+            <img src='/icons/heart.png' alt='logo' onClick={() => router('home')} />
             <div style={{color: titleColor}}>挥墨书未来</div>
           </div>
           <ul className={styles.menu}>
             <li
-              className={page === 'Home' ? styles.isActive: null}
-              onClick={() => router('Home')}
+              className={page === 'home' ? styles.isActive: null}
+              onClick={() => router('home')}
             >
               <a>首页</a>
             </li>
             <li
-              className={page === 'Life' ? styles.isActive: null}
-              onClick={() => router('Life')}
+              className={page === 'im' ? styles.isActive: null}
+              onClick={() => router('im')}
             >
-              <a>生活</a>
+              <a>IM</a>
             </li>
             <li
-              className={page === 'Visual' ? styles.isActive: null}
-              onClick={() => router('Visual')}
+              className={page === 'visual' ? styles.isActive: null}
+              onClick={() => router('visual')}
             >
               <a>可视化</a>
             </li>
             <li
-              className={page === 'Data' ? styles.isActive: null}
-              onClick={() => router('Data')}
+              className={page === 'data' ? styles.isActive: null}
+              onClick={() => router('data')}
             >
               <a>数据</a>
             </li>
             <li
-              className={page === 'About' ? styles.isActive: null}
-              onClick={() => router('About')}
+              className={page === 'about' ? styles.isActive: null}
+              onClick={() => router('about')}
             >
               <a>关于</a>
             </li>

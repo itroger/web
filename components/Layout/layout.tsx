@@ -7,6 +7,7 @@ import styles from './layout.less'
 
 const Layout:React.FC<LayoutProps> = props => {
   const { children, page } = props
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,9 +16,9 @@ const Layout:React.FC<LayoutProps> = props => {
         <meta content='itroger 挥墨书未来' />
         <meta name='viewpoint' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <Header />
-      <main className={`${styles.main} ${page === 'home' ? styles.home : null}`}>{ children }</main>
-      {page === 'home' ? <Footer /> : null}
+      <Header fullScreen={ page === 'im' } />
+      <main className={`${styles.main} ${page === 'home' ? styles.home : null} ${page === 'im' ? styles.fullScreen : null}`}>{ children }</main>
+      { page === 'home' ? <Footer /> : null }
     </div>
   )
 }

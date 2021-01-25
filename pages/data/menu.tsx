@@ -28,7 +28,7 @@ const Menu: React.FC = () => {
       category={item.category}
       level={item.level}
       key={item.component}
-      onClick={() => Router.push({ pathname: '/Data/Code', query: { url: item.url } }, '/Data/Code')}
+      onClick={() => Router.push({ pathname: '/data/code', query: { url: item.url } }, '/data/code')}
     />)}
   </div>
 }

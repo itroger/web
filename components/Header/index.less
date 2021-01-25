@@ -6,6 +6,10 @@
   background-size: cover;
   background-position: center;
 
+  &.fullScreen {
+    height: 64px;
+  }
+
   nav {
     left: 0;
     display: flex;
@@ -106,6 +110,10 @@
 @media screen and (max-width: 666px) {
   .header {
     height: 250px;
+
+    &.fullScreen {
+      height: 40px;
+    }
 
     nav {
       height: 40px;

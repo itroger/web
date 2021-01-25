@@ -8,13 +8,13 @@ const cardList: CardListType[] = [
   {
     name: '编程题库',
     background: '/images/background.jpg',
-    url: '/Data/Menu',
+    url: '/data/menu',
     attribute: 'algorithm'
   },
   {
     name: 'Next项目搭建',
     background: '/images/background.jpg',
-    url: '/Data/Menu',
+    url: '/data/menu',
     attribute: 'next'
   }
 ]

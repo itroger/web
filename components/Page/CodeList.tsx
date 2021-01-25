@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../pages/Data/index.less'
+import styles from '../../pages/data/index.less'
 import { CodeListProps } from 'components/page'
 
 const CodeList: React.FC<CodeListProps> = props => {

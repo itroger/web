@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../pages/Data/index.less'
+import styles from '../../pages/data/index.less'
 import { ArticleListProps } from 'components/page'
 
 const ArticleList: React.FC<ArticleListProps> = props => {
