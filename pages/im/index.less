@@ -1,18 +1,39 @@
+@scale: calc(326 / 375);
+
 .im {
+  height: calc(100vh - 84px);
 
   .iPhone {
-    width: 500px;
-    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     background-image: url("/elements/iPhone.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 375px auto;
 
     .content {
-      width: 375px;
-      height: 667px;
-      margin: 0 auto;
-      background-color: rgba(220, 220, 220, .5);
+      width: calc(375px * @scale);
+      height: 706px;
+      margin-left: -1px;
+      border-radius: 34px;
+      overflow: hidden;
+      //background-color: rgba(220, 0, 220, .5);
+
+      .statusBars {
+        width: 100%;
+        height: calc(44px * @scale);
+        background-image: url("/elements/statusBars.svg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 666px){
+  .im {
+    height: calc(100vh - 60px);
   }
 }
