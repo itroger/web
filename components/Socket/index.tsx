@@ -1,22 +1,19 @@
 import React from 'react'
-import { io } from 'socket.io-client'
+import io from 'socket.io-client'
 
-const socket = io('https://itroger.cn')
+const socket = io('/')
 
 const Socket: React.FC = () => {
-  socket.on('login', data => {
-    console.log(data)
+  socket.on('connect', () => {
+    console.log('客户端连接服务器')
   })
-
-  socket.on('add user', data => {
-    console.log(data)
+  socket.on('talk', message => {
+    console.log('客户端接收信息', message)
   })
-
-  socket.on('new message', data => {
-    console.log(data)
+  socket.emit('talk', '客户端发送信息')
+  socket.on('disconnect', () => {
+    console.log('客户端断开连接')
   })
-
-  socket.emit('new message', 'Hello Socket')
 
   return <div>Socket</div>
 }

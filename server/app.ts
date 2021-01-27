@@ -10,8 +10,6 @@ const server = new Koa()
 const router = new Router()
 const io = new Server()
 
-
-
 app.prepare().then(() => {
 
   router.get('/', async ctx => {
@@ -32,27 +30,6 @@ app.prepare().then(() => {
     ctx.respond = false
   })
 
-  router.get('/data/menu:attribute', async ctx => {
-    const { attribute } = ctx.params
-    console.log('attribute', ctx.params)
-    ctx.body = attribute
-    // await handle(ctx.req, ctx.res, {
-    //   auth: undefined,
-    //   hash: undefined,
-    //   host: undefined,
-    //   hostname: undefined,
-    //   href: '',
-    //   path: undefined,
-    //   pathname: '/data/menu',
-    //   port: undefined,
-    //   protocol: undefined,
-    //   query: { attribute },
-    //   search: undefined,
-    //   slashes: undefined
-    // })
-    // ctx.respond = false
-  })
-
   server.use(router.routes())
 
   server.use(async ctx => {
@@ -62,17 +39,19 @@ app.prepare().then(() => {
 
   server.listen(3000, () => console.log('Server is listing on http://localhost:3000'))
 
+  io.on('connect', client => {
+    console.log('服务器连接客户端', client)
 
-// io.on('connection', socket => {
-//   socket.on('new message', data => {
-//     console.log('server: ' + data)
-//     io.emit('new message', data)
-//   })
-//
-//   socket.on('disconnect', () => {
-//     console.log('user disconnected')
-//   })
-// })
+    client.join('KPL')
+    client.on('talk', message => {
+      client.to('KPL').emit('talk', message)
+    })
+
+    client.on('disconnect', () => {
+      console.log('断开连接客户端')
+    })
+  })
+
 })
 
 

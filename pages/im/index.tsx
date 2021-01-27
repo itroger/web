@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './index.less'
 import {GetStaticProps} from 'next'
+import Socket from '../../components/Socket'
 
 export const getStaticProps: GetStaticProps = async () => ({ props: { page: 'im' } })
 
@@ -10,6 +11,7 @@ const Life: React.FC = () => {
     <div className={styles.iPhone}>
       <div className={styles.content}>
         <div className={styles.statusBars} />
+        <Socket />
       </div>
     </div>
   </div>

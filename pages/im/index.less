@@ -1,4 +1,5 @@
 @scale: calc(326 / 375);
+@scale1: calc(70 / 84);
 
 .im {
   height: calc(100vh - 84px);
@@ -15,11 +16,11 @@
 
     .content {
       width: calc(375px * @scale);
-      height: 706px;
-      margin-left: -1px;
+      height: 705px;
+      margin: -1px 0 0 0;
       border-radius: 34px;
       overflow: hidden;
-      //background-color: rgba(220, 0, 220, .5);
+      background-color: rgba(220, 0, 220, .5);
 
       .statusBars {
         width: 100%;
@@ -35,5 +36,16 @@
 @media screen and (max-width: 666px){
   .im {
     height: calc(100vh - 60px);
+
+    .iPhone {
+      background-size: calc(385px * @scale1) auto;
+
+      .content {
+        width: calc(375px * @scale * @scale1 + 7px);
+        height: calc(705px * @scale1 + 17px);
+        margin: -1px 0 0 1px;
+        border-radius: 30px;
+      }
+    }
   }
 }
