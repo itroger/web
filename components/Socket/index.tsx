@@ -1,7 +1,7 @@
 import React from 'react'
 import io from 'socket.io-client'
 
-const socket = io('/')
+const socket = io('https://itroger.cn')
 
 const Socket: React.FC = () => {
   socket.on('connect', () => {
