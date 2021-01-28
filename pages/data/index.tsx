@@ -8,14 +8,17 @@ const cardList: CardListType[] = [
   {
     name: '编程题库',
     background: '/images/background.jpg',
-    url: '/data/menu',
     attribute: 'algorithm'
   },
   {
     name: 'Next项目搭建',
     background: '/images/background.jpg',
-    url: '/data/menu',
     attribute: 'next'
+  },
+  {
+    name: 'Nginx',
+    background: '/images/background.jpg',
+    attribute: 'nginx'
   }
 ]
 
@@ -26,7 +29,7 @@ const Data: React.FC = () => {
       name={item.name}
       background={item.background}
       key={item.name}
-      onClick={() => Router.push({ pathname: item.url, query: { attribute: item.attribute } }, item.url)}
+      onClick={() => Router.push({ pathname: '/data/menu', query: { attribute: item.attribute } }, '/data/menu')}
     />)}
   </div>
 }

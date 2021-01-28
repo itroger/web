@@ -1,9 +1,8 @@
-export type AttributeType = 'algorithm' | 'next'
+export type AttributeType = 'algorithm' | 'next' | 'nginx'
 
 export interface CardListType {
   name: string,
   background: string,
-  url: string,
   attribute: AttributeType
 }
 
