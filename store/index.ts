@@ -2,7 +2,7 @@ import {ActionType, ReducerType, StateType} from 'store'
 import {Context, createContext, Dispatch} from 'react'
 
 const initialState: StateType = {
-  page: 'home'
+  page: 'home',
 }
 
 const reducer: ReducerType = (state: StateType, action: ActionType) => {

@@ -11,7 +11,7 @@ const Life: React.FC = () => {
     <div className={styles.iPhone}>
       <div className={styles.content}>
         <div className={styles.statusBars} />
-        <Socket />
+        <Socket className={styles.socket} />
       </div>
     </div>
   </div>

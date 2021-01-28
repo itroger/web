@@ -1,21 +1,53 @@
-import React from 'react'
+import {Button, Input} from 'antd'
+import React, { useEffect, useState } from 'react'
 import io from 'socket.io-client'
+import styles from './index.less'
+import Login from './login'
+import {SocketType} from 'components/socket'
 
-const socket = io('https://itroger.cn')
+const socket = io()
 
-const Socket: React.FC = () => {
-  socket.on('connect', () => {
-    console.log('客户端连接服务器')
-  })
-  socket.on('talk', message => {
-    console.log('客户端接收信息', message)
-  })
-  socket.emit('talk', '客户端发送信息')
-  socket.on('disconnect', () => {
-    console.log('客户端断开连接')
+const Socket: React.FC<SocketType> = () => {
+  const [nikeName, setNikeName] = useState<string>()
+  const [message, setMessage] = useState<string>()
+  const [context, setContext] = useState<string[]>([])
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      console.log('连接成功', socket.id)
+    })
+
+    return () => {
+      socket.on('disconnect', () => {
+        console.log('断开连接', socket.id)
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    socket.on('new message', message => {
+      setContext([...context, message])
+      console.log([...context, message])
+    })
+
+    return () => {
+      socket.off('new message')
+    }
   })
 
-  return <div>Socket</div>
+
+  const submit = () => {
+    socket.emit('new message', message)
+  }
+
+  return <div className={styles.socket}>
+    <Login />
+    {/*<div className={styles.context}>*/}
+    {/*  {context.map(item => <p key={+new Date() + Math.random()}>{item}</p>)}*/}
+    {/*</div>*/}
+    {/*<Input onChange={e => setMessage(e.target.value)} />*/}
+    {/*<Button onClick={submit}>发送</Button>*/}
+  </div>
 }
 
 export default Socket

@@ -15,6 +15,8 @@
     background-size: 375px auto;
 
     .content {
+      display: flex;
+      flex-direction: column;
       width: calc(375px * @scale);
       height: 705px;
       margin: -1px 0 0 0;
@@ -29,6 +31,10 @@
         background-repeat: no-repeat;
         background-size: 100% auto;
       }
+
+      .socket {
+        flex: 1;
+      }
     }
   }
 }
@@ -41,9 +47,9 @@
       background-size: calc(385px * @scale1) auto;
 
       .content {
-        width: calc(375px * @scale * @scale1 + 7px);
+        width: calc(375px * @scale * @scale1 + 4px);
         height: calc(705px * @scale1 + 17px);
-        margin: -1px 0 0 1px;
+        margin: -1px 0 0 -1px;
         border-radius: 30px;
       }
     }
