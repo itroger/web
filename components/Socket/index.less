@@ -1,4 +1,4 @@
-@import "pages/im/index";
+@import "/pages/im/index";
 
 .socket {
   height: 100%;
@@ -28,8 +28,34 @@
 
 .chat {
 
+  .recipient {
+    text-align: center;
+    border-bottom: 1px solid #d1d1d1;
+  }
+
   .context {
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 580px;
+    overflow-y: auto;
+
+    .message {
+      align-self: baseline;
+      margin: 5px 0;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #a0ea6f;
+
+      &::after {
+        position: relative;
+        margin-left: 5px;
+        content: "";
+        width: 0;
+        height: 0;
+        border: 10px solid;
+        border-color: transparent transparent transparent #a0ea6f;
+      }
+    }
   }
 
   .send {
@@ -49,6 +75,10 @@
 
 @media screen and (max-width: 666px){
   .chat {
+
+    .context {
+      height: 440px;
+    }
 
     .send {
       width: @width1;

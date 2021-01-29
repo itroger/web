@@ -28,32 +28,35 @@ const Chat: React.FC<ChatProps> = props => {
     socket.emit('addUser', nickName)
   }, [nickName])
 
-  useEffect(() => {
-    socket.on('new message', message => {
-      setContext([...context, message])
-      console.log([...context, message])
-    })
+  // useEffect(() => {
+  //   socket.on('newMessage', message => {
+  //     setContext([...context, message])
+  //   })
+  //
+  //   return () => {
+  //     socket.off('newMessage')
+  //   }
+  // })
 
-    return () => {
-      socket.off('new message')
-    }
-  })
 
 
-  const send = () => {
-    socket.emit('new message', message)
+  const send = async () => {
+    await setContext([...context, message])
+    await socket.emit('new message', message)
+    await setMessage(undefined)
   }
 
   return <div className={`${styles.chat} ${!visible?styles.hidden:null}`}>
-    <div>{nickName}</div>
+    <div className={styles.recipient}>{nickName}</div>
     <div className={styles.context}>
-      {context.map(item => <p key={+new Date() + Math.random()}>{item}</p>)}
+      {context.map(item => <span className={styles.message} key={+new Date() + Math.random()}>{item}</span>)}
     </div>
     <div className={styles.send}>
       <Input
+        value={message}
         onChange={e => setMessage(e.target.value)}
       />
-      <Button type='primary' onClick={send}>发送</Button>
+      <Button type='primary' disabled={!message} onClick={send}>发送</Button>
     </div>
   </div>
 }

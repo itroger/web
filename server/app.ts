@@ -46,8 +46,8 @@ nextApp.prepare().then(() => {
 
     socket.join('KPL')
 
-    socket.on('new message', message => {
-      socket.emit('new message', message)
+    socket.on('newMessage', message => {
+      socket.emit('newMessage', message)
     })
 
     socket.on('addUser', username => {
