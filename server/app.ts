@@ -50,9 +50,10 @@ nextApp.prepare().then(() => {
       socket.emit('new message', message)
     })
 
-    socket.on('add user', username => {
+    socket.on('addUser', username => {
+      console.log('用户登录', username)
       socket.username = username
-      socket.emit('login', {})
+      socket.emit('login', `${username} 登录`)
     })
 
     socket.on('disconnect', () => {})

@@ -1,9 +1,7 @@
+@import "pages/im/index";
+
 .socket {
   height: 100%;
-
-  .context {
-    height: 100px;
-  }
 }
 
 .login {
@@ -24,6 +22,36 @@
 
     Button {
       width: 80%;
+    }
+  }
+}
+
+.chat {
+
+  .context {
+    height: 100px;
+  }
+
+  .send {
+    display: flex;
+    position: absolute;
+    width: @width;
+
+    Input {
+      margin-right: 1px;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 666px){
+  .chat {
+
+    .send {
+      width: @width1;
     }
   }
 }

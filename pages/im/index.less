@@ -1,5 +1,7 @@
 @scale: calc(326 / 375);
 @scale1: calc(64 / 84);
+@width: calc(375px * @scale);
+@width1: calc(375px * @scale * @scale1 + 4px);
 
 .im {
   height: calc(100vh - 84px);
@@ -17,9 +19,9 @@
     .content {
       display: flex;
       flex-direction: column;
-      width: calc(375px * @scale);
+      width: @width;
       height: 705px;
-      margin: -1px 0 0 0;
+      margin: -1px 0 0 -1px;
       border-radius: 34px;
       overflow: hidden;
       //background-color: rgba(220, 0, 220, .5);
@@ -30,6 +32,12 @@
         background-image: url("/elements/statusBars.svg");
         background-repeat: no-repeat;
         background-size: 100% auto;
+      }
+
+      .time {
+        position: absolute;
+        margin: 12px 0 0 26px;
+        font-size: 12px;
       }
 
       .socket {
@@ -47,10 +55,16 @@
       background-size: calc(385px * @scale1) auto;
 
       .content {
-        width: calc(375px * @scale * @scale1 + 4px);
+        width: @width1;
         height: calc(705px * @scale1 + 17px);
-        margin: -1px 0 0 -1px;
+        margin: -1px 0 0 -2px;
         border-radius: 30px;
+
+        .time {
+          position: absolute;
+          margin: 7px 0 0 17px;
+          font-size: 12px;
+        }
       }
     }
   }
