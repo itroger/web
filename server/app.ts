@@ -41,19 +41,29 @@ nextApp.prepare().then(() => {
 
   httpServer.listen(3000, () => console.log('Server is listing on http://localhost:3000'))
 
+  // socket 连接
   io.on('connection', socket => {
     console.log('服务器连接成功', socket.id)
 
     socket.join('KPL')
 
-    socket.on('newMessage', message => {
-      socket.emit('newMessage', message)
+    // socket 监听用户登录
+    socket.on('login', username => {
+      if (username) {
+        console.log('用户登录', username)
+        socket.username = username
+        socket.emit('login', `${username} 登录`)
+      }
     })
 
-    socket.on('addUser', username => {
-      console.log('用户登录', username)
-      socket.username = username
-      socket.emit('login', `${username} 登录`)
+    // socket 监听用户退出
+    socket.on('disconnect', () => {
+      console.log('用户退出')
+    })
+
+    // socket 监听用户发送信息
+    socket.on('message', message => {
+      socket.to('KPL').emit('message', message)
     })
 
     socket.on('disconnect', () => {})

@@ -18,3 +18,9 @@ export interface ChatProps {
   visible: boolean,
   nickName: string
 }
+
+export interface MessageType {
+  sender?: string,
+  recipient?: string | undefined,
+  message?: string | undefined
+}
