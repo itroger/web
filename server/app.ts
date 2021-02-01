@@ -45,7 +45,9 @@ nextApp.prepare().then(() => {
   httpServer.listen(3000, () => console.log('Server is listing on http://localhost:3000'))
 
   // socket 连接
-  io.on('connection', socket => {
+  io
+      .of('/socket.io')
+      .on('connection', socket => {
     console.log('服务器连接成功', socket.id)
 
     socket.join('KPL')
