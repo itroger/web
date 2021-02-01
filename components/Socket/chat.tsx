@@ -4,7 +4,7 @@ import io from 'socket.io-client'
 import styles from './index.less'
 import { ChatProps, MessageType } from 'components/socket'
 
-const socket = io('https://itroger.cn:3000/', {
+const socket = io('https://itroger.cn/socket', {
   'transports': ['websocket', 'polling']
 })
 
