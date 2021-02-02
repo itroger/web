@@ -179,7 +179,7 @@ export default components
   code {
     padding: 2px 4px;
     border-radius: 2px;
-    font-family: 'Fira Code', 'Roboto Mono', monospace;
+    font-family: 'Fira Document', 'Roboto Mono', monospace;
     font-size: 0.92rem;
     color: #e96900;
     background-color: #f8f8f8;

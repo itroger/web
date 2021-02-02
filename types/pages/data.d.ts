@@ -1,13 +1,13 @@
 import { MdxRemote } from 'next-mdx-remote/types'
 
-export type AttributeType = 'algorithm' | 'next' | 'nginx'
+export type CategoryType = 'algorithm' | 'next' | 'nginx'
 
 export interface CardListType {
   name: string,
   background: string,
-  attribute: AttributeType
+  category: CategoryType
 }
 
-export interface CodeProps {
+export interface DocumentProps {
   source: MdxRemote.Source
 }

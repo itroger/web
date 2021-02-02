@@ -1,13 +1,4 @@
-import {BaseType} from 'base'
-
-export interface ArticleListProps extends BaseType {
-  name: string,
-  category: string[],
-  time: string,
-  mdx?: string,
-  title?: boolean,
-  onClick?: () => void
-}
+import { BaseType } from 'base'
 
 export interface CardProps {
   name: string,
@@ -15,11 +6,13 @@ export interface CardProps {
   onClick: () => void
 }
 
-export interface CodeListProps extends BaseType {
-  component?: string,
+export interface DocumentListProps extends BaseType {
+  serial: string | number,
   name: string,
   category: string,
+  tag: string,
   level: string,
+  time?: string,
   url?: string,
   title?: boolean,
   onClick?: () => void

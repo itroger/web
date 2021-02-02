@@ -5,7 +5,7 @@ import { cos } from '../../utils/cos'
 import styles from './index.less'
 import { GetServerSideProps } from 'next'
 import renderToString from 'next-mdx-remote/render-to-string'
-import { CodeProps } from 'pages/data'
+import { DocumentProps } from 'pages/data'
 import hydrate from 'next-mdx-remote/hydrate'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -22,14 +22,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: { source: await renderToString('') } }
 }
 
-const Code: React.FC<CodeProps> = props => {
+const Document: React.FC<DocumentProps> = props => {
   const { source } = props
 
-  return <div className={styles.code}>
+  return <div className={styles.document}>
     <MDXProvider components={components} >
       {hydrate(source)}
     </MDXProvider>
   </div>
 }
 
-export default Code
+export default Document
