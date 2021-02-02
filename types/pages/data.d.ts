@@ -1,3 +1,5 @@
+import { MdxRemote } from 'next-mdx-remote/types'
+
 export type AttributeType = 'algorithm' | 'next' | 'nginx'
 
 export interface CardListType {
@@ -7,5 +9,5 @@ export interface CardListType {
 }
 
 export interface CodeProps {
-  source: string
+  source: MdxRemote.Source
 }

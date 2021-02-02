@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import {Button} from 'antd'
+import { Button } from 'antd'
 import styles from './index.less'
 
 export const getStaticProps: GetStaticProps = async () => ({ props: { page: 'home' }})
