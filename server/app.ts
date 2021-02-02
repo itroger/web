@@ -10,8 +10,9 @@ const handle = nextApp.getRequestHandler()
 const app = new Koa()
 const httpServer = http.createServer(app.callback())
 const io = new Server(httpServer, {
-  'serveClient': false,
-  'transports': ['websocket', 'polling']
+  path: '/wss/socket.io',
+  serveClient: false,
+  transports: ['websocket', 'polling']
 })
 const router = new Router()
 
@@ -45,9 +46,7 @@ nextApp.prepare().then(() => {
   httpServer.listen(3000, () => console.log('Server is listing on http://localhost:3000'))
 
   // socket 连接
-  io
-    .of('/ws/socket.io')
-    .on('connection', socket => {
+  io.on('connection', socket => {
     console.log('服务器连接成功', socket.id)
 
     socket.join('KPL')
