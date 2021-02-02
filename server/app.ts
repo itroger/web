@@ -11,7 +11,6 @@ const app = new Koa()
 const httpServer = http.createServer(app.callback())
 const io = new Server(httpServer, {
   path: '/wss/socket.io',
-  serveClient: false,
   transports: ['websocket', 'polling']
 })
 const router = new Router()
