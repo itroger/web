@@ -4,8 +4,9 @@ import io from 'socket.io-client'
 import styles from './index.less'
 import { ChatProps, MessageType } from 'components/socket'
 
-const socket = io('https://itroger.cn:3000/', {
-  'transports': ['websocket', 'polling']
+const socket = io('https://itroger.cn:3000', {
+  path: '/ws/socket.io',
+  transports: ['websocket', 'polling']
 })
 
 const Chat: React.FC<ChatProps> = props => {
