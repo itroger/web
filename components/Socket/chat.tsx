@@ -5,7 +5,6 @@ import styles from './index.less'
 import { ChatProps, MessageType } from 'components/socket'
 
 const socket = io('https://itroger.cn',{
-  path: '/wss/socket.io',
   transports: ['websocket', 'polling']
 })
 

@@ -10,7 +10,6 @@ const handle = nextApp.getRequestHandler()
 const app = new Koa()
 const httpServer = http.createServer(app.callback())
 const io = new Server(httpServer, {
-  path: '/wss/socket.io',
   transports: ['websocket', 'polling']
 })
 const router = new Router()
