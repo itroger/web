@@ -17,3 +17,8 @@ export interface DocumentListProps extends BaseType {
   title?: boolean,
   onClick?: () => void
 }
+
+export interface LogoProps extends BaseType {
+  image: string,
+  text: string,
+}

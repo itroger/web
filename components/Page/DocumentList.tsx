@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../pages/data/index.less'
+import styles from './index.less'
 import { DocumentListProps } from 'components/page'
 
 const DocumentList: React.FC<DocumentListProps> = props => {

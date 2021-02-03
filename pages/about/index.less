@@ -1,3 +1,71 @@
 .about {
 
+  .contact {
+    width: 372px;
+    height: 226px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: linear-gradient(80deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+
+    .background {
+      position: absolute;
+      width: 372px;
+      height: 226px;
+      margin: -20px 0 0 -20px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-image: url("/images/contact.png");
+      opacity: .6;
+
+    }
+
+    .message {
+      position: absolute;
+      z-index: 10;
+      display: grid;
+      grid-template-rows: 40px 50px 50px 20px 20px;
+      align-items: center;
+
+      color: #ffffff;
+
+      > div {
+        &:nth-child(1) {
+          font-size: 18px;
+        }
+
+        &:nth-child(2) {
+          align-self: flex-end;
+          font-size: 24px;
+        }
+
+        &:nth-child(3) {
+          align-self: flex-start;
+          font-size: 16px;
+        }
+
+        &:nth-child(4), &:nth-child(5) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 3px;
+    background-color: #42b983;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 110px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
 }

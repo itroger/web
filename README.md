@@ -70,7 +70,8 @@ tsconfig.server.json  // server 文件夹 TypeScript 配置文件
 
 #### 4. Next
 - next/app : 定制 app
-- next/head : 定制 head 标签 
+- next/head : 定制 head 标签
+- next/image : 优化图片
 - next/link : 组件路由跳转
 - next/router : 路由跳转
 - GetStaticProps : 服务端静态渲染
