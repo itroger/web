@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import styles from './index.less'
 import Logo from '../../components/Page/Logo'
 import { LogoProps } from 'components/page'
@@ -69,11 +68,11 @@ const develop: LogoProps[] = [
     text: 'Termius'
   },
   {
-    image: '/logos/xcode.png',
+    image: '/logos/xcode.svg',
     text: 'Xcode'
   },
   {
-    image: '/logos/edge.png',
+    image: '/logos/edge.svg',
     text: 'Edge'
   }
 ]
@@ -127,51 +126,51 @@ const application: LogoProps[] = [
 
 const device: LogoProps[] = [
   {
-    image: '/logos/iphone12.jpg',
+    image: '/logos/iphone12.svg',
     text: 'iPhone 12'
   },
   {
-    image: '/logos/ipadpro.png',
+    image: '/logos/ipadpro.svg',
     text: 'iPad Pro'
   },
   {
-    image: '/logos/macbookpro.jpg',
+    image: '/logos/macbookpro.svg',
     text: 'MacBook'
   },
   {
-    image: '/logos/applewatchse.jpg',
+    image: '/logos/applewatchse.svg',
     text: 'Watch SE'
   },
   {
-    image: '/logos/homepodmini.png',
+    image: '/logos/homepodmini.svg',
     text: 'HomePod'
   },
   {
-    image: '/logos/airpods.png',
+    image: '/logos/airpods.svg',
     text: 'AirPods'
   },
   {
-    image: '/logos/p30.png',
+    image: '/logos/p30.svg',
     text: 'P30'
   },
   {
-    image: '/logos/mr7350.png',
+    image: '/logos/mr7350.svg',
     text: 'MR7350'
   },
   {
-    image: '/logos/1005w.png',
+    image: '/logos/1005w.svg',
     text: '1005w'
   },
   {
-    image: '/logos/u2520d.webp',
+    image: '/logos/u2520d.svg',
     text: 'U2520D'
   },
   {
-    image: '/logos/minila.jpg',
+    image: '/logos/minila.svg',
     text: 'minila'
   },
   {
-    image: '/logos/genioplus.png',
+    image: '/logos/genioplus.svg',
     text: 'Genio Plus'
   }
 ]
