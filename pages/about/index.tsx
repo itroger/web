@@ -29,8 +29,16 @@ const tech: LogoProps[] = [
     text: 'Webpack'
   },
   {
+    image: '/logos/d3.svg',
+    text: 'D3'
+  },
+  {
     image: '/logos/node.svg',
     text: 'Node'
+  },
+  {
+    image: '/logos/nginx.svg',
+    text: 'Nginx'
   },
   {
     image: '/logos/github.svg',
