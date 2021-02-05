@@ -16,9 +16,9 @@ const cardList: CardListType[] = [
     category: 'next'
   },
   {
-    name: 'Nginx',
+    name: '技术杂谈',
     background: '/images/background.jpg',
-    category: 'nginx'
+    category: 'tech'
   }
 ]
 

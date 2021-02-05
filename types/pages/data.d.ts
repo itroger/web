@@ -1,6 +1,6 @@
 import { MdxRemote } from 'next-mdx-remote/types'
 
-export type CategoryType = 'algorithm' | 'next' | 'nginx'
+export type CategoryType = 'algorithm' | 'next' | 'tech'
 
 export interface CardListType {
   name: string,
