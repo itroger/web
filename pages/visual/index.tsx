@@ -4,11 +4,20 @@ import * as geo from 'd3-geo'
 import * as d3Color from 'd3-scale-chromatic'
 import styles from './index.less'
 
-const createSVG = () => {
-  const svg = d3.select('#map').append('svg')
+const createMap = () => {
+  const projection = geo.geoMercator()
+    .scale(3500)
+    .center([115, 22])
+    .translate([1024 / 2, 600 / 2])
+
+  const path = geo.geoPath(projection)
+  const colors = d3.scaleOrdinal(d3Color.schemeBrBG[11])
+
+  const svg = d3.select('#svg').append('svg')
     .attr('width', 1024)
     .attr('height', 600)
 
+  const getJson = async () => await d3.json('/geo/china.json')
   getJson().then(({ features }) => {
     svg.selectAll('path')
       .data(features)
@@ -21,24 +30,23 @@ const createSVG = () => {
   })
 }
 
-const projection = geo.geoMercator()
-  .scale(3500)
-  .center([115, 22])
-  .translate([1024 / 2, 600 / 2])
+const createBar = () => {
+  const data = [10, 20, 15, 30]
 
-const path = geo.geoPath(projection)
-const colors = d3.scaleOrdinal(d3Color.schemeBrBG[11])
+  const svg = d3.select('#svg').append('svg')
+    .attr('width', 1024)
+    .attr('height', 600)
 
-const getJson = async () => await d3.json('/geo/china.json')
+}
 
 const Visual: React.FC = () => {
 
   useEffect(() => {
-    createSVG()
+    createMap()
   }, [])
 
   return <div className={styles.visual}>
-    <div id='map' />
+    <div id='svg' />
   </div>
 }
 
