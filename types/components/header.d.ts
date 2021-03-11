@@ -1,5 +1,5 @@
-export type PageType = 'home' | 'im' | 'visual' | 'data' | 'about'
+export type PageType = 'home' | 'im' | 'visual' | 'concept' | 'data' | 'about'
 
 export interface HeaderProps {
-  fullScreen: boolean
+  shortHeader: boolean
 }

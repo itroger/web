@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = props => {
   const navRef = useRef()
   const { state: { page }, dispatch } = useContext(WebContext)
 
-  const { fullScreen } = props
+  const { shortHeader } = props
 
   // 导航栏背景色和标题颜色
   useEffect(() => {
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = props => {
     await Router.push( page === 'home' ? '/index' : `/${page}`, page === 'home' ? '/' : `/${page}`)
   }
 
-  return <header className={`${styles.header} ${fullScreen ? styles.fullScreen : null}`} ref={navRef}>
+  return <header className={`${styles.header} ${shortHeader ? styles.shortHeader : null}`} ref={navRef}>
     <nav style={{
       background: navBackgroundVisible ? navBackground : null,
       position: navBackgroundVisible ? 'fixed' : null,
@@ -79,6 +79,12 @@ const Header: React.FC<HeaderProps> = props => {
               onClick={() => router('visual')}
             >
               <a>可视化</a>
+            </li>
+            <li
+              className={page === 'concept' ? styles.isActive: null}
+              onClick={() => router('concept')}
+            >
+              <a>新概念</a>
             </li>
             <li
               className={page === 'data' ? styles.isActive: null}

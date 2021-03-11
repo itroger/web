@@ -4,7 +4,7 @@ import {GetStaticProps} from 'next'
 import Socket from '../../components/Socket'
 import Time from '../../components/Socket/time'
 
-export const getStaticProps: GetStaticProps = async () => ({ props: { page: 'im' } })
+export const getStaticProps: GetStaticProps = async () => ({ props: { page: 'im', shortHeader: true } })
 
 const Life: React.FC = () => {
 

@@ -8,7 +8,7 @@ import './_app.less'
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [state, dispatch] = useReducer<ReducerType>(reducer, initialState)
-  const { page } = pageProps
+  const { page, shortHeader, fullContainer } = pageProps
 
   // 读取 localStorage
   useEffect(() => {
@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [state])
 
   return <WebContext.Provider value={{state, dispatch}}>
-    <Layout page={page}>
+    <Layout page={page} shortHeader={shortHeader} fullContainer={fullContainer}>
       <Component {...pageProps} />
     </Layout>
   </WebContext.Provider>
